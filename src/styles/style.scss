@@ -1,1 +1,5 @@
-/* Add your SCSS here */
+@use "./partial/reset";
+@use "./partial/base";
+@use "./partial/variables";
+@use "./partial/mixins";
+@use "./partial/main";
