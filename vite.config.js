@@ -20,6 +20,11 @@ export default defineConfig({
       },
     },
   },
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "./src"), // 画像パスの動作安定のため
+    },
+  },
   css: {
     preprocessorOptions: {
       scss: {
