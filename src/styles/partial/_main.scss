@@ -1,12 +1,13 @@
-// 例
+@use "./variables" as vars;
 
-body {
-  margin: 0;
-  font-family: sans-serif;
+.wrapper {
+  max-width: 800px;
+  padding: 0 20px;
+  margin: 0 auto;
 }
 
 .keyvisual {
-  padding: 400px 0; /*paddingで表示領域を確保。heightやwidthは用いない*/
+  height: calc(100vh - 150px);
   text-align: center;
   background: url("@/img/cat.jpg") center / cover no-repeat;
 }
@@ -15,26 +16,33 @@ body {
   width: 100%;
   background: transparent;
   transition: background-color 0.3s, box-shadow 0.3s;
+  & a {
+    margin: 0 20px;
+  }
+  & ul {
+    display: flex;
+    justify-content: center;
+    padding: 15px 0;
+    margin: 0;
+  }
+  &.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: vars.$fixed-bg; /* 固定時の背景色 */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  }
 }
 
-.global-nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  padding: 15px 0;
-  margin: 0;
+.cat-text {
+  margin-bottom: 30px;
+  padding: 10px 0;
+  text-align: left;
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
-.global-nav.fixed {
-  position: fixed;
-  top: 0;
-  left: 0;
-  background: #fff; /* 固定時の背景色 */
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-}
-
-.global-nav a {
-  text-decoration: none;
-  color: #333;
-  margin: 0 20px;
+.footer-text {
+  text-align: center;
 }

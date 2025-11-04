@@ -1,10 +1,13 @@
+@use "./variables" as vars;
+
 html {
   box-sizing: border-box;
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: vars.$font-family;
   font-size: 100%;
+  color: vars.$body-color;
 }
 
 *,
@@ -16,6 +19,19 @@ body {
   background-repeat: no-repeat;
 }
 
+main,
+footer {
+  background-color: vars.$main-bg;
+}
+
+header {
+  height: 150px;
+}
+
+footer {
+  padding: 100px 0 30px;
+}
+
 h1 {
   font-size: 30px;
   font-weight: bold;
@@ -23,15 +39,24 @@ h1 {
   text-align: center;
 }
 
-p {
-  padding: 10px 0;
+h2,
+h3 {
+  font-weight: bold;
   text-align: center;
 }
 
-.wrapper {
-  max-width: 800px;
-  padding: 0 20px;
-  margin: 0 auto;
+h2 {
+  font-size: 1.5rem;
+  padding: 30px 0;
+}
+
+h3 {
+  padding: 15px 0;
+}
+
+p {
+  text-align: center;
+  line-height: 1.7;
 }
 
 a {
