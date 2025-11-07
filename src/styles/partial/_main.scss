@@ -14,8 +14,14 @@
 
 .global-nav {
   width: 100%;
+  position: sticky;
+  top: 0; // stickyは位置指定とセットで使う
   background: transparent;
   transition: background-color 0.3s, box-shadow 0.3s;
+  &.is-scrolled {
+    background: vars.$sticky-bg;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  }
   & a {
     margin: 0 20px;
   }
@@ -25,14 +31,15 @@
     padding: 15px 0;
     margin: 0;
   }
-  &.fixed {
-    position: fixed;
-    top: 0;
-    left: 0;
-    background: vars.$fixed-bg; /* 固定時の背景色 */
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-  }
 }
+// position: fixed;を使う場合
+// &.fixed {
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   background: vars.$fixed-bg; /* 固定時の背景色 */
+//   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+// }
 
 .cat-text {
   margin-bottom: 30px;
