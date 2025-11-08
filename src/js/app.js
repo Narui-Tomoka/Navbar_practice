@@ -1,5 +1,4 @@
 // position: stickyを用いた方法
-//
 
 $(function () {
   // navを定数に入れる
@@ -14,10 +13,8 @@ $(function () {
     const scrollPos = $(window).scrollTop();
     // 現在のスクロール量がnavの元位置以上になったら（画面上部にnavが来たら）
     if (scrollPos >= navOffsetTop) {
-      if (!nav.hasClass("is-scrolled")) {
-        // nav(.global-nav)にis-scrolledクラスをつける
-        nav.addClass("is-scrolled");
-      }
+      // nav(.global-nav)にis-scrolledクラスをつける
+      nav.addClass("is-scrolled");
       // スクロール量がnavの元の位置以下になったら
     } else {
       // navからis-scrolledクラスを外す
@@ -25,6 +22,17 @@ $(function () {
     }
   });
 });
+
+// position: sticky と fixed の違い
+// 【要素の固定場所】
+// ・stickyは「親要素の範囲内で」指定した位置に固定される
+// ・fixedは「画面全体を基準に」常に同じ位置に固定される
+// 【親要素から受ける影響】
+// ・stickyは親要素を基準とするため、親要素の範囲を超えると固定が解除される
+// ・fixedは親要素の範囲を超えて画面上に固定される
+// 【高さ認識のされ方】
+// ・stickyは高さを保持したまま固定される
+// ・fixedは要素が「浮いた」状態になるため高さが認識されない
 
 // 以下はposition: fixed;を指定してダミー要素を入れて隙間を調整する方法
 
